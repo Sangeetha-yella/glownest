@@ -1,23 +1,154 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>GlowNest</title>
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            background-color: pink;
-            padding: 50px;
-        }
-        h1 {
-            color: purple;
-        }
-    </style>
+<title>GlowNest - Beauty Store</title>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #fff0f5;
+  text-align: center;
+}
+header {
+  background: #e8a6bd;
+  padding: 25px;
+  color: white;
+}
+nav {
+  background: #f7d5e1;
+  padding: 15px;
+}
+nav a {
+  margin: 15px;
+  text-decoration: none;
+  color: #7b3455;
+  font-weight: bold;
+}
+h2 { color: #a0446a; }
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  background: white;
+  width: 220px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px #ddd;
+}
+.card img {
+  width: 150px;
+  height: 130px;
+  object-fit: contain;
+}
+button {
+  background: #d8759c;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+footer {
+  background: #e8a6bd;
+  color: white;
+  padding: 20px;
+}
+</style>
 </head>
+
 <body>
 
-    <h1>Welcome to GlowNest!</h1>
-    <p>Your beauty, your glow.</p>
+<header>
+<h1>GlowNest</h1>
+<p>Your Beauty, Your Glow!</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#cart">Cart</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+<h2>Welcome to GlowNest!</h2>
+<p>Discover your beauty with our skincare and beauty products.</p>
+</section>
+
+<h2 id="products">Our Beauty Products</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="https://placehold.co/150x130/fce4ec/9c4668?text=Face+Wash">
+<h3>Face Wash</h3>
+<p>Price: ₹199</p>
+<button onclick="addToCart(199)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://placehold.co/150x130/fce4ec/9c4668?text=Moisturizer">
+<h3>Moisturizer</h3>
+<p>Price: ₹299</p>
+<button onclick="addToCart(299)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://placehold.co/150x130/fce4ec/9c4668?text=Sunscreen">
+<h3>Sunscreen</h3>
+<p>Price: ₹349</p>
+<button onclick="addToCart(349)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="https://placehold.co/150x130/fce4ec/9c4668?text=Serum">
+<h3>Face Serum</h3>
+<p>Price: ₹399</p>
+<button onclick="addToCart(399)">Add to Cart</button>
+</div>
+
+</div>
+
+<section id="cart">
+<h2>My Shopping Cart</h2>
+<p>Items: <span id="count">0</span></p>
+<p>Total: ₹<span id="total">0</span></p>
+<button onclick="clearCart()">Clear Cart</button>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p>Email: glownest@example.com</p>
+<p>Thank you for visiting GlowNest!</p>
+</section>
+
+<footer>
+<p>© 2026 GlowNest Beauty Store</p>
+</footer>
+
+<script>
+let count = 0;
+let total = 0;
+
+function addToCart(price) {
+  count++;
+  total += price;
+  document.getElementById("count").innerText = count;
+  document.getElementById("total").innerText = total;
+  alert("Product added to cart!");
+}
+
+function clearCart() {
+  count = 0;
+  total = 0;
+  document.getElementById("count").innerText = 0;
+  document.getElementById("total").innerText = 0;
+}
+</script>
 
 </body>
 </html>
